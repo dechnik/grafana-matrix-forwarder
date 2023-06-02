@@ -12,7 +12,7 @@
       pkgsFor = nixpkgs.legacyPackages;
     in
     rec {
-      # nixosModules.default = import nix/module.nix self;
+      nixosModules.default = import nix/module.nix self;
 
       packages = forAllSystems (system: {
         default = pkgsFor.${system}.callPackage nix/default.nix { inherit nixpkgs system; };
